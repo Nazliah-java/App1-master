@@ -11,7 +11,9 @@ public class Main {
             //animal.makeSound();
 
             //Call makeSound method for dog
-            System.out.println("Dog Name: " + animal.getName());
+            System.out.print("Dog Name: ");
+            animal.animalName();
+
             System.out.print("Dog Sound: " );
             dog.makeSound();
     

@@ -1,4 +1,4 @@
-package AssignmentDayFive.SingleTonClass;
+package ExercisesDayFive.SingleTonClass;
 
 public class Main {
     public static void main(String[] args) {

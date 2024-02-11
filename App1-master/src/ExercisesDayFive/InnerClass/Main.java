@@ -1,4 +1,4 @@
-package AssignmentDayFive.InnerClass;
+package ExercisesDayFive.InnerClass;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package AssignmentDayFive.SingleTonClass;
+package ExercisesDayFive.SingleTonClass;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

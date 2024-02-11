@@ -1,4 +1,4 @@
-package AssignmentDayFive.InnerClass;
+package ExercisesDayFive.InnerClass;
 
 public class Outer {
 
