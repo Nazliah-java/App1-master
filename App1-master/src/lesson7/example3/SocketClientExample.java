@@ -1,4 +1,4 @@
-package lesson14.example3;
+package lesson7.example3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
