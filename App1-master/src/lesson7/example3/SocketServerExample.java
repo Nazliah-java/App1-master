@@ -32,7 +32,7 @@ public class SocketServerExample {
             ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             
             //write object to Socket
-            oos.writeObject("Hi Client "+message);
+            oos.writeObject("Hi Client " + message);
            
             //close resources
             ois.close();
