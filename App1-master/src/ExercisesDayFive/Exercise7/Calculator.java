@@ -1,4 +1,4 @@
-package ExercisesDayFive.SignatureMethod;
+package ExercisesDayFive.Exercise7;
 
 public class Calculator {
     

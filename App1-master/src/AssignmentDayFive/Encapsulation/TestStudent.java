@@ -15,3 +15,7 @@ public class TestStudent {
         System.out.println("Roll Number: " + student.getRollNumber());
     }
 }
+
+// Encapsulation is all about having private instance variable and providing public getter and
+// setter methods.
+

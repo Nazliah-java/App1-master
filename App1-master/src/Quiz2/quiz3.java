@@ -2,7 +2,7 @@ package Quiz2;
 
 public class quiz3 {
     public static void main(String[] args){
-        Boolean b1 = new Boolean("true");
+        Boolean b1 = new Boolean("tRuE");
         Boolean b2 = new Boolean("fAlSe");
         Boolean b3 = new Boolean("abc");
         Boolean b4 = null;

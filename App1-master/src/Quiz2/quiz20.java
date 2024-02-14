@@ -6,6 +6,6 @@ public class quiz20 {
         String str = process(arr, 3, 8);
         System.out.println(str);
     }
-    private static int[ ] process ( int [ ] arr, int start, int end ) {  return null; }
+    private static String process ( int [ ] arr, int start, int end ) {  return null; }
 }
 

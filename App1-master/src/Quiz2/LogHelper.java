@@ -1,27 +1,33 @@
 package Quiz2;
 
-
-abstract class Helper{
-    private int num = 100;
+abstract class Helper {
+    int num = 100;
     String operation = null;
 
-    protected abstract void help();
+    void help(){
+        
+    }
 
     void log(){
-        System.out.println("Helper-log");
+        System.out.println(("Helper-log"));
     }
 
 }
 
-public class LogHelper{
+public class LogHelper extends Helper{
     private int num = 200;
     protected String operation = "LOGGING";
 
-    void help({
-        System.out.println("LogHelper-log");
-    });
-}
+    void help(){
+        System.out.println("LogHelper-help");
+    }
 
-public static void main(String[] args){
-    
+    void log(){
+        System.out.println("LogHelper-log");
+    }
+
+    public static void main(String[] args) {
+        new LogHelper().help();
+    }
 }
+    

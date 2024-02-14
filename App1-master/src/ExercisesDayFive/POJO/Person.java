@@ -10,6 +10,8 @@ public class Person {
         
     }
 
+    //Person = as Pojo (primary key, foreign key)
+    //(...) = fields
     public Person(String name, int age, String email){
         this.name = name;
         this.age = age;

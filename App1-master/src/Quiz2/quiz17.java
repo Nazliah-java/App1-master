@@ -6,6 +6,7 @@ public class quiz17 {
         String s1 = sb.toString();
         String s2 = "Java";
 
-        System.out.println(s1 == s2);
+        //System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2)); //to get true
     }
 }
