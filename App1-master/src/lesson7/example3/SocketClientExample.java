@@ -24,15 +24,18 @@ public class SocketClientExample {
         for(int i = 0; i < 5; i++){
             //establish socket connection to server
             socket = new Socket(host.getHostName(), port);
+            
             //write to socket using ObjectOutputStream
             oos = new ObjectOutputStream(socket.getOutputStream());
             System.out.println("Sending request to Socket Server");
             if(i == 4)oos.writeObject("exit");
             else oos.writeObject("writing " + i);
+            
             //read the server response message
             ois = new ObjectInputStream(socket.getInputStream());
             String message = (String) ois.readObject();
             System.out.println("Message response: " + message);
+            
             //close resources
             ois.close();
             oos.close();
