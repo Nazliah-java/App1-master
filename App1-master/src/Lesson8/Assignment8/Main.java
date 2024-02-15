@@ -1,9 +1,7 @@
-package Lesson8.Assignment1;
+package lesson8.Assignment8;
 
 public class Main {
-
     public static void main(String[] args) {
         
     }
-    
 }

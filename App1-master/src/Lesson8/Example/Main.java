@@ -1,4 +1,4 @@
-package Lesson8.Example;
+package lesson8.Example;
 
 //extend, abstract, inheritance sama
 //implement, interface, same

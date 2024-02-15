@@ -1,4 +1,4 @@
-package Lesson8.Assignment13;
+package lesson8.Assignment8;
 
 public interface PaymentGateway {
     

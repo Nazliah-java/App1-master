@@ -1,4 +1,4 @@
-package Lesson8.Example;
+package lesson8.Example;
 
 //border abstract class ialah extends kalau guna enheritance
 //implement kena ada override

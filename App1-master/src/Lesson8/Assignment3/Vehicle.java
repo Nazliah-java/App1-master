@@ -1,5 +1,17 @@
-package Lesson8.Assignment3;
+package lesson8.Assignment3;
 
-public class Vehicle {
-    
+public interface Vehicle {
+    // basic operation for vehicle
+
+    // start vehicle
+    void start();
+
+    // stop vehicle
+    void stop();
+
+    // increase speed vehicle
+    void accelerate(double speed);
+
+    // decrease speed vehicle
+    void brake(double speed);
 }

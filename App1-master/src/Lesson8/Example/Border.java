@@ -1,4 +1,4 @@
-package Lesson8.Example;
+package lesson8.Example;
 
 //contoh inheritance - tentang abstract/implement about interface
 abstract class Border{

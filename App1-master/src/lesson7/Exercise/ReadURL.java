@@ -44,5 +44,10 @@ public static void main(String[] args) {
             e.printStackTrace();
         }
     }
+
+public void read() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'read'");
+}
     
 }

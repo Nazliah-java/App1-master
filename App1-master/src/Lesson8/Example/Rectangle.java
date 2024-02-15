@@ -1,4 +1,4 @@
-package Lesson8.Example;
+package lesson8.Example;
 
 public class Rectangle extends Border implements Shape{
     private double height;
