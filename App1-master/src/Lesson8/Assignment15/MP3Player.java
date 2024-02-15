@@ -1,13 +1,16 @@
 package lesson8.Assignment15;
 
+import java.util.ArrayList;
+import java.util.ArrayList;
+
 public class MP3Player implements MusicPlayer{
 
     private String[] playlist;
     private int currentTrackIndex;
     private boolean isPlaying;
 
-    public MP3Player(String[] playlist, int currentTrackIndex, boolean isPlaying){
-        this.playlist = playlist;
+    public MP3Player(int currentTrackIndex, boolean isPlaying){
+        this.playlist = new ArrayList<>(playlist);
         this.currentTrackIndex = currentTrackIndex;
         this.isPlaying = isPlaying;
     }

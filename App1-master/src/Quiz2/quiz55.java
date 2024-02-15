@@ -7,7 +7,7 @@ public class quiz55 {
     }
     
     public static void main(String[] args) {
-        Test obj = new Test();
+        Main obj = new Main();
         System.out.println(obj.name);
     }
 }

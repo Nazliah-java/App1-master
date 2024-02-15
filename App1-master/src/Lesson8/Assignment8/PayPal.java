@@ -1,17 +1,18 @@
 package lesson8.Assignment8;
 
-public class Paypal implements PaymentGateway {
+class PayPal implements PaymentGateway {
 
-    @Override
     public void processPayment(double amount) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'processPayment'");
+        System.out.println("Processing payment of $ " + amount + " through PayPal.");
+        if (Math.random() < 0.9) { 
+            System.out.println("Payment successful!");
+        } else {
+            System.out.println("Payment failed. Please try again later.");
+        }
     }
 
     @Override
     public boolean isPaymentSuccessful() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isPaymentSuccessful'");
+        return Math.random() < 0.9;
     }
-    
 }

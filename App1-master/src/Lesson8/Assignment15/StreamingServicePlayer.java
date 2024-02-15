@@ -5,7 +5,7 @@ public class StreamingServicePlayer implements MusicPlayer{
     private String currentTrack;
     private boolean isPlaying;
 
-    public StreamingServicePlayer(String currentTrack, boolean isPlaying){
+    public StreamingServicePlayer(String currentTrack, Boolean isPlaying){
         this.currentTrack = currentTrack;
         this.isPlaying = isPlaying;
     }
@@ -32,14 +32,14 @@ public class StreamingServicePlayer implements MusicPlayer{
 
     @Override
     public void next() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'next'");
+        currentTrack = "Next Track";
+        play();
     }
 
     @Override
     public void previous() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'previous'");
+        currentTrack = "Previous Track";
+        play();
     }
     
 }
