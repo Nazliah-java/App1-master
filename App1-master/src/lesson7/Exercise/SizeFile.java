@@ -9,6 +9,7 @@ public class SizeFile {
     private String fileName;
 
     public SizeFile(){
+        
     }
 
     public void size() throws IOException{

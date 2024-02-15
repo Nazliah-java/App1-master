@@ -8,10 +8,12 @@ public class CountWords {
 
     private String fileName, line;
 
+    //constructor
     public CountWords(String fileName){
         this.fileName = fileName;
     }
 
+    //method
     public void countWord() throws IOException{
         int num = 0;
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
