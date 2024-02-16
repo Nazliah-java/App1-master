@@ -1,4 +1,4 @@
-package lesson8.BankAccountInterface;
+package lesson8.Assignment2;
 
 public interface BankAccount {
 

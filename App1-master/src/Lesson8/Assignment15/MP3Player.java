@@ -1,58 +1,40 @@
 package lesson8.Assignment15;
 
-import java.util.ArrayList;
-import java.util.ArrayList;
-
-public class MP3Player implements MusicPlayer{
-
-    private String[] playlist;
-    private int currentTrackIndex;
-    private boolean isPlaying;
-
-    public MP3Player(int currentTrackIndex, boolean isPlaying){
-        this.playlist = new ArrayList<>(playlist);
-        this.currentTrackIndex = currentTrackIndex;
-        this.isPlaying = isPlaying;
-    }
+public class MP3Player implements MusicPlayer {
+    String[] playlist = { "Song1", "Song2", "Song3"};
+    int currentsongIndex = 0;
 
     @Override
     public void play() {
-        if(!isPlaying){
-            System.out.println("Playing: " + playlist[currentTrackIndex]);
-            isPlaying = true;
-        }else{
-            System.out.println("Track is already playing.");
-        }
+        System.out.println("Playing: " + playlist[currentsongIndex]);
     }
 
     @Override
     public void pause() {
-        if(!isPlaying){
-            System.out.println("Playing: " + playlist[currentTrackIndex]);
-            isPlaying = false;
-        }else{
-            System.out.println("Track is already paused.");
-        }
+        System.out.println("Pausing: " + playlist[currentsongIndex]);
     }
 
     @Override
     public void next() {
-        if(currentTrackIndex < playlist.length - 1){
-            currentTrackIndex++;
-            play();
-        }else{
-            System.out.println("End of playlist reached.");
+        currentsongIndex++;
+        if (currentsongIndex > playlist.length) {
+            System.out.println("Track ended.");
+        } else {
+            System.out.println("Playing next track on MP3 player.");
+            System.out.println("Playing: " + playlist[currentsongIndex]);
         }
+
     }
 
     @Override
     public void previous() {
-        if(currentTrackIndex > 0){
-            currentTrackIndex--;
-            play();
-        }else{
-            System.out.println("This is the first track in the playlist.");
+        currentsongIndex--;
+        if (currentsongIndex < 0) {
+            System.out.println("No previous song.");
+        } else {
+            System.out.println("Playing previous track on MP3 player.");
+            System.out.println("Playing: " + playlist[currentsongIndex]);
         }
     }
-    
+
 }

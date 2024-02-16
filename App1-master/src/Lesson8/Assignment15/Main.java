@@ -1,21 +1,31 @@
 package lesson8.Assignment15;
 
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         
-        List<String> mp3Playlist = List.of("Song1.mp3", "Song2.mp3", "Song3.mp3");
-
-        MusicPlayer mp3Player = new MP3Player("aku", 0, false);
-        mp3Player.play();
-        mp3Player.next();
-        mp3Player.previous();
-        mp3Player.pause();
-
-        MusicPlayer streamingServicePlayer = new StreamingServicePlayer(null, false);
-        streamingServicePlayer.next();
-        streamingServicePlayer.play();
-        streamingServicePlayer.pause();
+          //mp3Player
+          System.out.println("[MP3Player]");
+          MP3Player mp3Player = new MP3Player();
+          mp3Player.play();
+          mp3Player.pause();
+          mp3Player.next();
+          mp3Player.previous();
+          mp3Player.previous();
+          
+  
+          System.out.println();
+  
+          //StreamingServicePlayer
+          System.out.println("[Youtube]");
+          StreamingServicePlayer player = new StreamingServicePlayer();
+          player.play();
+          player.pause();
+          player.next();
+          player.previous();
+          player.next();
+          player.next();
+          player.next();
+          player.next();
+  
+      }
     }
-}

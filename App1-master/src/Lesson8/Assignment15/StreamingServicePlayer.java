@@ -1,45 +1,39 @@
 package lesson8.Assignment15;
 
 public class StreamingServicePlayer implements MusicPlayer{
-
-    private String currentTrack;
-    private boolean isPlaying;
-
-    public StreamingServicePlayer(String currentTrack, Boolean isPlaying){
-        this.currentTrack = currentTrack;
-        this.isPlaying = isPlaying;
-    }
+    String[] showlist = { "Video1", "Video2", "Video3" };
+    int currentIndex = 0;
 
     @Override
     public void play() {
-       if(currentTrack != null && !isPlaying){
-        System.out.println("Playing: " + currentTrack);
-    }else{
-        System.out.println("Track is already playing or no track is selected.");
-    }
-
+        System.out.println("Playing: " + showlist[currentIndex]);
     }
 
     @Override
     public void pause() {
-        if(!isPlaying){
-            System.out.println("Paused: " + currentTrack);
-            isPlaying = false;
-        }else{
-            System.out.println("Track is already paused.");
-        }
+        System.out.println("Pausing: " + showlist[currentIndex]);
     }
 
     @Override
     public void next() {
-        currentTrack = "Next Track";
-        play();
+        currentIndex++;
+        if (currentIndex > showlist.length - 1) {
+            System.out.println("Show ended.");
+        } else {
+            System.out.println("Playing next track on MP3 player.");
+            System.out.println("Playing: " + showlist[currentIndex]);
+        }
     }
 
     @Override
     public void previous() {
-        currentTrack = "Previous Track";
-        play();
+        currentIndex--;
+        if (currentIndex < 0) {
+            System.out.println("No previous episode.");
+        } else {
+            System.out.println("Playing previous track on MP3 player.");
+            System.out.println("Playing: " + showlist[currentIndex]);
+        }
     }
     
 }
