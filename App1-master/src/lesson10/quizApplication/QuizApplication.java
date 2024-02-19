@@ -19,6 +19,8 @@ public class QuizApplication extends JFrame {
     private int score = 0;
     private int currentQuestionIndex = 0;
     Question[] questions;
+    private Timer timer;
+    private int timeLeftInSeconds = 10;
 
     //constructor
     public QuizApplication(Question[] questions) {
@@ -40,6 +42,7 @@ public class QuizApplication extends JFrame {
         for (int i = 0; i < optionButtons.length; i++) {
             optionButtons[i] = new JRadioButton(questions[currentQuestionIndex].getOptions()[i]);
             buttonGroup.add(optionButtons[i]);
+            // optionsPanel.add(buttonGroup[]);
             optionsPanel.add(optionButtons[i]);
         }
         mainPanel.add(optionsPanel, BorderLayout.CENTER);
@@ -49,9 +52,14 @@ public class QuizApplication extends JFrame {
         mainPanel.add(submitButton, BorderLayout.SOUTH);    //submit button positioned at the bottom
 
         setContentPane(mainPanel);  //to ensure all components displayed within the window
+
+        //create and start the timer
+        timer = new Timer(1000, new TimeListener());
+        timer.start();
     }
 
-    // Inner class for handling button click event
+    //INNER CLASSES
+    //Inner class for handling button click event
     private class SubmitButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -73,6 +81,9 @@ public class QuizApplication extends JFrame {
                 score++;
             }
 
+            // Stop the timer
+            timer.stop();
+
             // Move to the next question or show the final score
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
@@ -82,11 +93,48 @@ public class QuizApplication extends JFrame {
                     optionButtons[i].setText(options[i]);
                     optionButtons[i].setSelected(false); // Clear selection
                 }
+                // Restart the timer for the next question
+                timeLeftInSeconds = 10;
+                // Reset timer
+                timer.start();
             } else {
                 JOptionPane.showMessageDialog(QuizApplication.this, "Quiz completed! Your score: " + score + "/" + questions.length, "Quiz Completed", JOptionPane.INFORMATION_MESSAGE);
                 dispose(); // Close the application after quiz completion
             }
         }
+    }
+
+    private class TimeListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(timeLeftInSeconds > 0){
+                //Update the timer label
+                submitButton.setText("Submit [Time left: " + timeLeftInSeconds + " s]");
+                timeLeftInSeconds--;
+            }else{
+                //Automatically submit the answer when time runs out
+                JOptionPane.showMessageDialog(QuizApplication.this, "Time's up! Submitting your answer.", "Time's Up", JOptionPane.WARNING_MESSAGE);
+                timer.stop();
+
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    questionLabel.setText(questions[currentQuestionIndex].getQuestion());
+                    String[] options = questions[currentQuestionIndex].getOptions();
+                    for (int i = 0; i < optionButtons.length; i++) {
+                        optionButtons[i].setText(options[i]);
+                        optionButtons[i].setSelected(false); // Clear selection
+                    }
+                    // Restart the timer for the next question
+                    timeLeftInSeconds = 10;
+                    // Reset timer
+                    timer.start();
+                } else {
+                    JOptionPane.showMessageDialog(QuizApplication.this, "Quiz completed! Your score: " + score + "/" + questions.length, "Quiz Completed", JOptionPane.INFORMATION_MESSAGE);
+                    dispose(); // Close the application after quiz completion
+                }
+            }
+        }
+        
     }
 
     // Method to read questions from a file and create Question objects
@@ -102,6 +150,7 @@ public class QuizApplication extends JFrame {
                 }
                 String correctAnswer = br.readLine();
                 questions.add(new MultipleChoiceQuestion(questionText, options, correctAnswer));
+                br.readLine();
             }
         }
         return questions;

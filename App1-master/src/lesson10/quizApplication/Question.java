@@ -1,6 +1,7 @@
 package lesson10.quizApplication;
 
-// Abstract class providing common functionality for questions
+//ABSTRACT CLASS
+//Abstract class providing common functionality for questions
 abstract class Question implements QuestionType {
     private String question;
     private String[] options;
