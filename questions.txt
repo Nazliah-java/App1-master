@@ -1,0 +1,17 @@
+Automatic type conversion is possible in which of the possible cases?
+int to long
+long to int
+short to int
+int to long
+
+What is the size of float and double in java?
+32 and 64
+64 and 64
+64 and 32
+32 and 64
+
+Arrays in java are?
+object references
+objects
+primitive data type
+objects
