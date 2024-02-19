@@ -10,9 +10,10 @@ import java.sql.Statement;
 
 public class QuizService {
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/quiz?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+    // private static final String JDBC_URL = "jdbc:mysql://localhost:3306/quiz?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/quiz";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "6136@Nazliah";
+    private static final String JDBC_PASSWORD = "6136@Siti";
 
     public QuizService() {
         

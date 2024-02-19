@@ -104,13 +104,13 @@ public class QuizApplication extends JFrame {
                 timer.start();
             } else {
                 JOptionPane.showMessageDialog(QuizApplication.this, "Quiz completed! Your score: " + score + "/" + questions.length, "Quiz Completed", JOptionPane.INFORMATION_MESSAGE);
+
+                dispose(); // Close the application after quiz completion
                 
                 String date = "2024-02-24";
                 QuizService quizService = new QuizService();
                 Quiz quiz = new Quiz(0, score, Date.valueOf(date));
                 quizService.insert(quiz);
-
-                dispose(); // Close the application after quiz completion
             }
         }
     }
